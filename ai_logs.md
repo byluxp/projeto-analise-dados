@@ -1,4 +1,4 @@
-## Logs de IA
+## Logs de IA (prompts usados na palestra)
 
 ### Prompt 1:
 estou realizando a análise desse dataset. liste pra mim as colunas mais relevantes que possam me trazer uma análise ampla e com resultado satisfatório. me de exemplos de insights que eu possa buscar através desse dataset. me responda apenas com as perguntas a serem feitas ao dataset, que possam ser interessantes a minha audiência e o porque de cada escolha. me de 10 exemplos de pergunta, me devolva como chat. 

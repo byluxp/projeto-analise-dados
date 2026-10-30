@@ -1,162 +1,148 @@
-# 📊 Análise Exploratória do Catálogo Netflix
+# 📊 Análise exploratória do catálogo da Netflix
 
-> **Dataset:** `netflix_titles.csv` — 8.804 títulos (filmes e séries)  
-> **Período de adição:** 2008 – 2021  
-> **Ferramentas:** Python 3 · pandas · numpy · seaborn · matplotlib  
-> **Script de análise:** [`analise_netflix.py`](./analise_netflix.py)  
-> **Gráficos gerados:** [`graficos/`](./graficos/)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square)
 
----
+Primeiro projeto de análise de dados feito **ao vivo, com IA como copiloto**, na palestra *"Análise de dados com IA: do zero ao primeiro projeto de portfólio"*.
 
-## Sumário
-
-1. [Evolução de Filmes vs. Séries](#1-evolução-de-filmes-vs-séries)
-2. [Top 10 Países Produtores](#2-top-10-países-produtores)
-3. [Gêneros Mais Frequentes](#3-gêneros-mais-frequentes)
-4. [Distribuição por Classificação Etária](#4-distribuição-por-classificação-etária)
-5. [Sazonalidade Mensal](#5-sazonalidade-mensal)
-6. [Séries: 1 Temporada vs. Múltiplas](#6-séries-1-temporada-vs-múltiplas)
-7. [Observações Complementares e Próximas Análises](#7-observações-complementares-e-próximas-análises)
+> [!NOTE]
+> **Sobre a palestra.** Apresentei online em agosto de 2026 para cerca de 25 estudantes do 1º período de Análise e Desenvolvimento de Sistemas de um Instituto Federal e para cerca de 20 participantes da comunidade **STEM Girls**. O objetivo foi mostrar o caminho que eu gostaria de ter tido no meu primeiro projeto: do zero até um repositório organizado no GitHub. Este repositório é o projeto que construímos juntos.
 
 ---
 
-## 1. Evolução de Filmes vs. Séries
+## 🧭 O passo a passo da palestra
 
-**Pergunta:** Como a distribuição entre filmes e séries evoluiu na plataforma ao longo dos anos?
+| # | Etapa | Ferramenta |
+|---|---|---|
+| 1 | Instalar a IDE com agente de IA e ativar o plano gratuito para estudantes | Google Antigravity |
+| 2 | Criar a conta e o primeiro repositório | GitHub |
+| 3 | Clonar o repositório para a máquina | Git |
+| 4 | Pedir ajuda para formular as perguntas de análise | ChatGPT |
+| 5 | Baixar um dataset público e colocar no projeto | Kaggle |
+| 6 | Ativar o agente do GitHub Copilot | GitHub Copilot |
+| 7 | Pedir ao agente que responda às perguntas com os dados | Antigravity |
+| 8 | Ler e conferir o código gerado | Pandas, NumPy, Matplotlib, Seaborn |
+| 9 | Escrever um README que explique o projeto | Markdown |
+| 10 | Fazer commit e push e ver como o projeto aparece no GitHub | Git e GitHub |
 
-![Evolução de Filmes vs. Séries](./graficos/q1_evolucao_filmes_series.png)
-
-### Insights
-
-- **Filmes dominam consistentemente** o catálogo Netflix, representando **66,3% do total** em 2021 — uma proporção que se manteve estável ao longo dos anos, com leve compressão em favor das séries entre 2015 e 2018.
-- **A partir de 2015**, observa-se uma **aceleração no volume de séries adicionadas**, coincidindo com a expansão internacional da Netflix e os investimentos em conteúdo original (*Netflix Originals*). Essa movimentação reduziu a vantagem relativa dos filmes, mas não reverteu a liderança do formato.
-- O **pico de adições absolutas** ocorreu entre **2018 e 2020**, quando a plataforma ampliou agressivamente seu catálogo em mercados emergentes como Índia, Brasil e Coreia do Sul.
-- A **queda em 2021** reflete o corte no período de observação do dataset (dados até setembro de 2021), não necessariamente uma retração estratégica.
-
----
-
-## 2. Top 10 Países Produtores
-
-**Pergunta:** Quais são os 10 países que mais produzem conteúdo no catálogo e qual é a participação de mercado de cada um?
-
-![Top 10 Países Produtores](./graficos/q2_top10_paises.png)
-
-### Insights
-
-- **Estados Unidos lideram com 36,8%** do catálogo, exercendo dominância clara sobre todos os demais países — mais que o dobro do segundo colocado.
-- **Índia ocupa o 2º lugar**, refletindo o massivo investimento da Netflix no mercado sul-asiático após sua entrada em 2016. O conteúdo de Bollywood e produções regionais impulsionaram essa posição.
-- **Reino Unido, Japão e Coreia do Sul** figuram entre os 5 primeiros, evidenciando o apetite global por conteúdo anglófono de qualidade e pelo fenômeno do *K-Drama*, que explodiu em audiência após 2019.
-- **Brasil e México** representam a América Latina no ranking, com crescimento acelerado a partir de 2018 como parte da estratégia de localização da Netflix.
-- A presença de **Espanha, França e Canadá** no top 10 demonstra diversificação geográfica, ainda que Europa e América do Norte concentrem a maioria do catálogo.
-
-> **Nota metodológica:** títulos com co-produção entre países (ex: `"USA, Germany"`) são contabilizados individualmente para cada país, o que pode elevar ligeiramente os totais de nações frequentemente parceiras.
+Os prompts usados estão em [`ai_logs.md`](./ai_logs.md).
 
 ---
 
-## 3. Gêneros Mais Frequentes
+## ⚠️ A lição mais importante: conferir o que a IA escreveu
 
-**Pergunta:** Quais são as combinações de gêneros mais frequentes na plataforma?
+A primeira versão deste README foi escrita pela IA e **parecia ótima**. Quando rodei o código e comparei com os dados, várias frases não se sustentavam:
 
-![Gêneros Mais Frequentes](./graficos/q3_generos_frequentes.png)
+| A IA escreveu | O que os dados mostram |
+|---|---|
+| "Japão e Coreia do Sul estão entre os 5 primeiros países" | Japão é o 6º e Coreia do Sul o 8º. O top 5 é EUA, Índia, Reino Unido, Canadá e França |
+| "Brasil e México representam a América Latina no ranking" | O Brasil **não está** no top 10. Só o México aparece, em 10º |
+| "Janeiro tem volume expressivo e março a maio têm menos adições" | Janeiro, março e abril ficam na média. O mês mais fraco é fevereiro |
 
-### Insights
+Os números calculados pelo código estavam certos. O erro estava nas **frases em volta deles**, que a IA completou com o que "parecia provável". Por isso, a análise abaixo foi reescrita só com o que o código calcula, e as explicações de negócio aparecem como **hipóteses**, não como fatos.
 
-- **International Movies** lidera com **2.752 títulos**, evidenciando que o catálogo da Netflix é genuinamente global — o conteúdo não-americano já supera qualquer gênero isolado.
-- **Dramas e Comédias** ocupam as posições seguintes como categorias transversais clássicas, estando presentes em praticamente todas as combinações de gênero.
-- **Documentários** aparecem em destaque, sinalizando o investimento da plataforma em jornalismo investigativo, biografias e narrativas de impacto social — segmento com alta taxa de engajamento e baixo custo relativo de produção.
-- **International TV Shows** no top 5 reforça o fenômeno das séries estrangeiras, puxado pelo K-Drama sul-coreano, Anime japonês e produções europeias.
-- A presença de **Kids' TV e Children & Family Movies** demonstra a preocupação em fidelizar usuários com perfis familiares, especialmente no segmento de assinantes com filhos.
-
----
-
-## 4. Distribuição por Classificação Etária
-
-**Pergunta:** Qual é a distribuição das classificações indicativas (rating) do catálogo global?
-
-![Classificações Indicativas](./graficos/q4_classificacoes_rating.png)
-
-### Insights
-
-- **TV-MA** (conteúdo para adultos, equivalente a +18) é **a classificação mais comum** do catálogo Netflix, indicando que a plataforma tem foco primário em audiência adulta.
-- Somando TV-MA, R e NC-17, o **conteúdo adulto representa 45,6% do catálogo** — quase metade de toda a biblioteca disponível.
-- **TV-14** (equivalente a PG-13) é o segundo grupo mais expressivo, apontando para uma forte fatia de entretenimento voltado ao público adolescente e jovem adulto.
-- Conteúdo **infantil e família** (TV-Y, TV-Y7, G, PG) compõe uma parcela significativa mas menor, o que contrasta com a percepção de que grandes plataformas equilibram seus catálogos entre todas as faixas etárias.
-- O predomínio de conteúdo adulto sugere que a Netflix prioriza assinantes com maior poder aquisitivo e autonomia de escolha — perfil que tende a manter assinaturas por mais tempo.
+**Regra que levo para todo projeto:** a IA acelera, mas cada afirmação do README precisa apontar para um número que o código gerou.
 
 ---
 
-## 5. Sazonalidade Mensal
+## 📁 Estrutura
 
-**Pergunta:** Como variam os meses do ano em que há mais adições de novos conteúdos?
+```
+projeto-analise-dados/
+├── analise_netflix.py   # script com as 6 análises
+├── netflix_titles.csv   # dataset (Kaggle, domínio público)
+├── graficos/            # um gráfico por pergunta, gerado pelo script
+├── ai_logs.md           # prompts usados na palestra
+└── requirements.txt
+```
 
-![Sazonalidade Mensal](./graficos/q5_sazonalidade_mensal.png)
+## 🗂️ Dataset
 
-### Insights
+| | |
+|---|---|
+| **Fonte** | [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows), de Shivam Bansal, no Kaggle |
+| **Licença** | CC0: domínio público |
+| **Tamanho** | 8.807 títulos (8.804 após a limpeza) e 12 colunas |
+| **Período** | títulos adicionados entre 2008 e setembro de 2021 |
 
-- **Julho é o mês de pico** de adições ao catálogo, tanto para filmes quanto para séries — um período estratégico que antecede as férias de verão no hemisfério norte e coincide com janelas de contrato com estúdios.
-- **Janeiro** apresenta volume expressivo, típico de plataformas que utilizam o início do ano para renovar o catálogo e reter assinantes que considerariam cancelar após as festas de fim de ano.
-- Os **meses de março a maio** revelam um padrão de menor adição, possivelmente relacionado ao ciclo de produção da indústria audiovisual (desenvolvimento de projetos, pré-produção).
-- **Filmes e séries seguem padrões sazonais semelhantes**, sugerindo que a estratégia de curadoria e licenciamento não diferencia significativamente o calendário editorial por formato.
-- **Setembro e outubro** mostram recuperação, antecipando a temporada de prêmios (*awards season*) — momento em que a Netflix posiciona seus títulos com maior potencial de reconhecimento crítico.
-
----
-
-## 6. Séries: 1 Temporada vs. Múltiplas
-
-**Pergunta:** Qual é a proporção de séries com apenas 1 temporada em comparação com séries de múltiplas temporadas?
-
-![Séries por Temporadas](./graficos/q6_series_temporadas.png)
-
-### Insights
-
-- **67,0% das séries no catálogo Netflix possuem apenas 1 temporada** — dado que pode indicar três fenômenos distintos: cancelamentos precoces, minisséries intencionalmente curtas (formato *limited series*) ou conteúdo licenciado de outros países.
-- A prevalência de séries curtas é coerente com a estratégia da Netflix de **testar formatos com baixo risco de investimento prolongado**: lança a primeira temporada, avalia métricas de engajamento e decide sobre renovação.
-- **Séries com 2 a 3 temporadas** constituem a segunda maior fatia, indicando que quando uma série passa da barreira da primeira temporada, ela tende a ganhar ao menos mais uma.
-- Existem **séries com mais de 10 temporadas**, em geral conteúdo licenciado de redes de TV tradicionais (ex: séries de procedimento policial americanas).
-- O modelo *limited series* (1 temporada como produto final) tem crescido como formato narrativo próprio, o que pode inflar artificialmente o percentual de séries com 1 temporada.
+**Limpeza:** em 3 linhas a duração ("74 min") estava na coluna de classificação indicativa por engano; essas linhas foram removidas.
 
 ---
 
-## 7. Observações Complementares e Próximas Análises
+## 📈 Análises
 
-As análises acima revelam padrões claros de comportamento estratégico da Netflix. A seguir, propomos desdobramentos analíticos que podem aprofundar o entendimento do catálogo:
+### 1. Como a divisão entre filmes e séries evoluiu?
+![Filmes vs. séries](./graficos/q1_evolucao_filmes_series.png)
 
-### 🔍 Geopolítica do Conteúdo
-- **Correlação entre investimento geográfico e crescimento de catálogo:** o crescimento de Índia e Coreia do Sul no ranking coincide com a expansão da Netflix nesses mercados. Seria possível correlacionar dados de adição de conteúdo por país com os anúncios oficiais de investimento da plataforma e dados de crescimento de assinantes por região?
+- O catálogo cresceu de verdade a partir de **2016**. O pico foi **2019, com 2.016 títulos adicionados**.
+- **Filmes são maioria em todos os anos com volume relevante.** Em 2021 foram 66,3% dos títulos adicionados.
+- Antes de 2016 entraram menos de 100 títulos por ano, então as oscilações de proporção desse período não dizem muito.
+- 2021 só tem dados até setembro: a queda nesse ano não deve ser lida como retração.
 
-### 📺 Cancelamentos e Longevidade de Séries
-- **67% das séries têm apenas 1 temporada.** Uma análise cruzando essa informação com os ratings no IMDb ou Rotten Tomatoes poderia revelar se há correlação entre qualidade percebida e continuidade — ou se fatores puramente financeiros e de engajamento determinam a renovação.
+### 2. Quais países têm mais títulos?
+![Top 10 países](./graficos/q2_top10_paises.png)
 
-### 🎬 Produção Original vs. Licenciada
-- O campo `director` está ausente em muitos registros de TV Shows. Um estudo de completude e padrão de ausência dos dados pode revelar se conteúdo licenciado (com dados menos estruturados) é tratado diferentemente do conteúdo original.
+- **Estados Unidos lideram com 3.687 títulos, 36,8%** das menções de país, mais que o triplo da **Índia** (1.046), em 2º.
+- Completam o top 5: Reino Unido, Canadá e França. Japão, Espanha, Coreia do Sul, Alemanha e México fecham o top 10.
+- Coproduções contam uma vez para cada país, então a soma passa do número de títulos.
 
-### 🕰️ Produção Histórica vs. Contemporânea
-- O dataset contém títulos de 1925 a 2021. Uma análise do `release_year` vs. `year_added` poderia revelar a **idade média do conteúdo** quando entra no catálogo — e se a Netflix está priorizando conteúdo recente ou apostando em catálogos clássicos como diferencial.
+### 3. Quais gêneros aparecem mais?
+![Gêneros](./graficos/q3_generos_frequentes.png)
 
-### 🌍 Big Tech, Streaming Wars e Catálogo
-- A aceleração de adições entre 2018–2020 coincide com o lançamento de concorrentes diretos (Disney+ em 2019, HBO Max em 2020, Apple TV+ em 2019). **Há evidência de que a Netflix intensificou a produção como resposta competitiva?** Um estudo temporal mais granular, cruzado com datas de lançamento dos concorrentes, poderia responder essa hipótese.
+- **International Movies** lidera com **2.752 títulos**, seguido de Dramas (2.427) e Comedies (1.674).
+- International TV Shows (1.351) e Documentaries (869) completam o top 5.
+- Cada título pode ter até 3 gêneros, por isso a contagem é por gênero, não por título.
 
-### 💡 Análise de Sentimento das Descrições
-- O campo `description` (sinopses) oferece material rico para **NLP (Processamento de Linguagem Natural)**. Uma análise de sentimento ou extração de tópicos (LDA) poderia revelar os temas narrativos dominantes e como eles evoluem por ano ou gênero.
+### 4. Para que público é o catálogo?
+![Classificação indicativa](./graficos/q4_classificacoes_rating.png)
+
+- **TV-MA**, conteúdo adulto, é a classificação mais comum (3.207 títulos), seguida de TV-14 (2.160).
+- Somando TV-MA, R e NC-17, o **conteúdo adulto é 45,6%** do catálogo.
+
+### 5. Em que meses entram mais títulos?
+![Sazonalidade](./graficos/q5_sazonalidade_mensal.png)
+
+- **Julho é o mês com mais adições (827)**, com dezembro logo atrás (813).
+- **Fevereiro é o mais fraco (563)**, mas também é o mês mais curto. Os demais meses ficam entre 630 e 770.
+- Filmes e séries seguem o mesmo desenho ao longo do ano.
+
+### 6. Quantas séries ficam na 1ª temporada?
+![Temporadas](./graficos/q6_series_temporadas.png)
+
+- **67,0% das séries têm só 1 temporada** (1.793 de 2.676).
+- 425 têm 2 temporadas e 199 têm 3. Só 43 chegam a 8 ou mais.
+- O dataset não diz se a série foi cancelada, se é minissérie ou se só a 1ª temporada foi licenciada. Por isso, este número sozinho não prova que "a Netflix cancela muito".
 
 ---
 
-## Configuração do Ambiente
+## 🔍 Limitações e próximas análises
+
+- **É uma foto do catálogo até setembro de 2021.** Não mostra o que é mais assistido nem a diferença entre os catálogos de cada país.
+- **Hipóteses para testar com outros dados:**
+  - O pico de 2019 coincide com a chegada do Disney+ e da Apple TV+. Houve reação da Netflix? Precisaria de dados de lançamento dos concorrentes e de investimento.
+  - As séries de 1 temporada foram canceladas ou planejadas assim? Precisaria separar originais Netflix de licenciadas.
+  - A coluna `description` permite análise de texto (temas mais comuns por ano ou gênero).
+
+---
+
+## ▶️ Como rodar
 
 ```bash
-# Clonar e criar o ambiente virtual
+git clone https://github.com/byluxp/projeto-analise-dados.git
+cd projeto-analise-dados
+
 python3 -m venv venv
 source venv/bin/activate
-
-# Instalar dependências
 pip install -r requirements.txt
 
-# Executar a análise completa
 python analise_netflix.py
 ```
 
-Os gráficos serão gerados automaticamente na pasta `graficos/`.
+Os gráficos são gerados na pasta `graficos/`.
 
 ---
 
-*Análise realizada com base no dataset público `netflix_titles.csv` — última atualização registrada: setembro de 2021.*
+Feito por **Lucila Vitória** · [LinkedIn](https://www.linkedin.com/in/lucila-cardoso/) · [GitHub](https://github.com/byluxp)
